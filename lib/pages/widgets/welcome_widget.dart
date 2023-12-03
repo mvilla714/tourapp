@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tourapp/pages/home_page2.dart';
 
-class WelcomeWidge extends StatelessWidget {
+class WelcomeWidget extends StatelessWidget {
   String title;
   String description;
   Color color;
   String pathAssets;
-  WelcomeWidge(
+  bool showButton;
+  WelcomeWidget(
       {required this.title,
       required this.description,
       required this.color,
-      required this.pathAssets});
+      required this.pathAssets,
+      required this.showButton});
+
+  Future _saveValue(bool valor) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    preferences.setBool('showWel', valor);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +36,11 @@ class WelcomeWidge extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 Image.asset(
                   "$pathAssets",
-                  height: 150,
+                  height: 120,
                 ),
                 SizedBox(
                   height: 50,
@@ -41,12 +50,32 @@ class WelcomeWidge extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
                 Divider(
-                  height: 50,
+                  height: 20,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 50),
                   child: Text("$description"),
-                )
+                ),
+                Divider(
+                  height: 50,
+                ),
+                showButton == false
+                    ? Container()
+                    : ElevatedButton(
+                        onPressed: () {
+                          _saveValue(true);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomePage2(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Vamos",
+                          style: TextStyle(),
+                        ),
+                      )
               ],
             ),
           ),
