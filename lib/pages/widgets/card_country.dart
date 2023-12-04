@@ -63,7 +63,8 @@ class CardCountry extends StatelessWidget {
               CircleAvatar(
                 minRadius: 14,
                 backgroundImage: NetworkImage(
-                    "https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1600"),
+                  "https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=600",
+                ),
               )
             ],
           ),

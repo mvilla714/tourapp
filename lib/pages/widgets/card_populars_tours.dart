@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tourapp/models/popular_tours_model.dart';
 
 class CardPopularsTours extends StatelessWidget {
-  const CardPopularsTours({super.key});
+  PopularsToursModel popularsToursModel;
+  CardPopularsTours({required this.popularsToursModel});
 
   @override
   Widget build(BuildContext context) {
@@ -19,42 +21,43 @@ class CardPopularsTours extends StatelessWidget {
                   bottomLeft: Radius.circular(16)),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: NetworkImage(
-                    "https://a.cdn-hotels.com/gdcs/production146/d585/aa60115c-bdfc-479f-88ba-5cb0f15a5af8.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"),
+                image: NetworkImage(popularsToursModel.img),
               ),
             ),
           ),
           const SizedBox(
             width: 10,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Thailand",
-                style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.black54,
-                    fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              Text(
-                "10 night for toe/all inlcusive",
-                style: TextStyle(fontSize: 14, color: Colors.black54),
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              Text(
-                "\$ 245.50",
-                style: TextStyle(fontSize: 14, color: Colors.black87),
-              )
-            ],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  popularsToursModel.country,
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.black54,
+                      fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  height: 6,
+                ),
+                Text(
+                  popularsToursModel.descriptionTours,
+                  style: TextStyle(fontSize: 14, color: Colors.black54),
+                ),
+                const SizedBox(
+                  height: 6,
+                ),
+                Text(
+                  "\$ ${popularsToursModel.price.toString()}",
+                  style: TextStyle(fontSize: 14, color: Colors.black87),
+                )
+              ],
+            ),
           ),
           SizedBox(
-            width: 35,
+            width: 20,
           ),
           Container(
             margin: EdgeInsets.all(10),
@@ -70,7 +73,7 @@ class CardPopularsTours extends StatelessWidget {
                   height: 12,
                 ),
                 Text(
-                  "4.5",
+                  popularsToursModel.rating.toString(),
                   style: TextStyle(fontSize: 14, color: Colors.white),
                 ),
                 Icon(

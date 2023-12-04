@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tourapp/data/data_tours.dart';
-import 'package:tourapp/models/country_model.dart';
 import 'package:tourapp/pages/widgets/card_country.dart';
 import 'package:tourapp/pages/widgets/card_populars_tours.dart';
 
@@ -11,12 +10,18 @@ class HomePage2 extends StatefulWidget {
 
 class _HomePage2State extends State<HomePage2> {
   List<Widget> listWidgetCardCountry = [];
+  List<Widget> listWidgetPopularsCountry = [];
   @override
   void initState() {
     super.initState();
     for (int i = 0; i < listCountry.length; i++) {
       listWidgetCardCountry.add(CardCountry(
         countryModel: listCountry[i],
+      ));
+    }
+    for (int i = 0; i < listPopularsTours.length; i++) {
+      listWidgetPopularsCountry.add(CardPopularsTours(
+        popularsToursModel: listPopularsTours[i],
       ));
     }
   }
@@ -91,11 +96,10 @@ class _HomePage2State extends State<HomePage2> {
                   //crossAxisAlignment: CrossAxisAlignment.start,
 
                   children: [
-                    CardPopularsTours(),
-                    CardPopularsTours(),
-                    CardPopularsTours(),
-                    CardPopularsTours(),
-                    CardPopularsTours(),
+                    ...listWidgetPopularsCountry,
+                    /*CardPopularsTours(
+                      popularsToursModel: listPopularsTours[0],
+                    ),*/
                   ],
                 ),
               ),

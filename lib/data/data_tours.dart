@@ -45,33 +45,34 @@ List<PopularsToursModel> listPopularsTours = [
       descriptionTours: "15 night for tow/all inclusive",
       rating: 8.5,
       img:
-          "https://imagesarizona.com/wp-content/uploads/2017/01/iStock-479493744-e1484685149865.jpg"),
+          "https://imagesarizona.com/wp-content/uploads/2017/01/iStock-479493744-e1484685149865.jpg",
+      price: 552.0),
   PopularsToursModel(
-    country: "Argentina",
-    descriptionTours: "10 night for tow/all inclusive",
-    rating: 5.5,
-    img:
-        "https://media.traveler.es/photos/6137877568a6ada2592a8f3e/1:1/w_384,h_384,c_limit/55607.jpg",
-  ),
+      country: "Argentina",
+      descriptionTours: "10 night for tow/all inclusive",
+      rating: 5.5,
+      img:
+          "https://media.traveler.es/photos/6137877568a6ada2592a8f3e/1:1/w_384,h_384,c_limit/55607.jpg",
+      price: 405.3),
   PopularsToursModel(
-    country: "Ecuador",
-    descriptionTours: "5 night for tow/all inclusive",
-    rating: 6.5,
-    img:
-        "https://tourthetropics.com/wp-content/uploads/2019/09/GalapagosIguana.jpg",
-  ),
+      country: "Ecuador",
+      descriptionTours: "5 night for tow/all inclusive",
+      rating: 6.5,
+      img:
+          "https://tourthetropics.com/wp-content/uploads/2019/09/GalapagosIguana.jpg",
+      price: 200.50),
   PopularsToursModel(
-    country: "EEUU",
-    descriptionTours: "7 night for tow/all inclusive",
-    rating: 9.5,
-    img:
-        "https://tipsparatuviaje.com/wp-content/uploads/2018/08/nueva-york-usa.jpg",
-  ),
+      country: "EEUU",
+      descriptionTours: "7 night for tow/all inclusive",
+      rating: 9.5,
+      img:
+          "https://tipsparatuviaje.com/wp-content/uploads/2018/08/nueva-york-usa.jpg",
+      price: 150.00),
   PopularsToursModel(
-    country: "China",
-    descriptionTours: "25 night for tow/all inclusive",
-    rating: 5.5,
-    img:
-        "https://humanidades.com/wp-content/uploads/2017/05/china-1-e1569778561539-800x416.jpg",
-  ),
+      country: "China",
+      descriptionTours: "25 night for tow/all inclusive",
+      rating: 5.5,
+      img:
+          "https://humanidades.com/wp-content/uploads/2017/05/china-1-e1569778561539-800x416.jpg",
+      price: 175.00),
 ];
